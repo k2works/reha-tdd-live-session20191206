@@ -56,16 +56,11 @@ suite("FizzBuzzTest", () => {
 });
 
 class Fizzbuzz {
-  constructor() {}
   convert(number) {
     let result = number;
-    if (result % 3 === 0 && result % 5 === 0) {
-      result = "FizzBuzz";
-    } else if (result % 3 === 0) {
-      result = "Fizz";
-    } else if (result % 5 === 0) {
-      result = "Buzz";
-    }
+    if (result % 3 === 0 && result % 5 === 0) return "FizzBuzz";
+    if (result % 3 === 0) return "Fizz";
+    if (result % 5 === 0) return "Buzz";
     return result.toString();
   }
 
