@@ -59,6 +59,7 @@ class Fizzbuzz {
   constructor() {
     this.FIZZ = "Fizz";
     this.BUZZ = "Buzz";
+    this.MAX_NUMBER = 100;
   }
   convert(number) {
     const isFizz = number % 3 === 0;
@@ -72,10 +73,9 @@ class Fizzbuzz {
   }
 
   generateList() {
-    let result = [];
-    for (let i = 0; i <= 100; i++) {
-      result[i] = this.convert(i + 1);
-    }
-    return result;
+    // 配列は0から始まるので1を足している
+    return [...Array(this.MAX_NUMBER + 1).keys()]
+      .slice(1)
+      .map(this.convert.bind(this));
   }
 }
