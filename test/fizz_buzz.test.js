@@ -57,11 +57,10 @@ suite("FizzBuzzTest", () => {
 
 class Fizzbuzz {
   convert(number) {
-    let result = number;
-    if (result % 3 === 0 && result % 5 === 0) return "FizzBuzz";
-    if (result % 3 === 0) return "Fizz";
-    if (result % 5 === 0) return "Buzz";
-    return result.toString();
+    if (number % 3 === 0 && number % 5 === 0) return "FizzBuzz";
+    if (number % 3 === 0) return "Fizz";
+    if (number % 5 === 0) return "Buzz";
+    return number.toString();
   }
 
   print1To100() {
