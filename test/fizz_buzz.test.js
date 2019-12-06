@@ -56,12 +56,18 @@ suite("FizzBuzzTest", () => {
 });
 
 class Fizzbuzz {
+  constructor() {
+    this.FIZZ = "Fizz";
+    this.BUZZ = "Buzz";
+  }
   convert(number) {
     const isFizz = number % 3 === 0;
     const isBuzz = number % 5 === 0;
-    if (isFizz && isBuzz) return "FizzBuzz";
-    if (isFizz) return "Fizz";
-    if (isBuzz) return "Buzz";
+
+    if (isFizz && isBuzz) return this.FIZZ + this.BUZZ;
+    if (isFizz) return this.FIZZ;
+    if (isBuzz) return this.BUZZ;
+
     return number.toString();
   }
 
