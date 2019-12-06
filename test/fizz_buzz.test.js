@@ -14,6 +14,12 @@ suite("FizzBuzzTest", () => {
       assert.equal("Buzz", fizzbuzz.convert(5));
     });
   });
+  suite("3と5の倍数の場合", () => {
+    test("15を渡したら文字列FizzBuzzを返す", () => {
+      const fizzbuzz = new Fizzbuzz();
+      assert.equal("FizzBuzz", fizzbuzz.convert(15));
+    });
+  });
   suite("その他の場合", () => {
     test("1を渡したら文字列1を返す", () => {
       const fizzbuzz = new Fizzbuzz();
@@ -25,7 +31,9 @@ suite("FizzBuzzTest", () => {
 class Fizzbuzz {
   convert(number) {
     let result = number;
-    if (result % 3 === 0) {
+    if (result % 3 === 0 && result % 5 === 0) {
+      result = "FizzBuzz";
+    } else if (result % 3 === 0) {
       result = "Fizz";
     } else if (result % 5 === 0) {
       result = "Buzz";
